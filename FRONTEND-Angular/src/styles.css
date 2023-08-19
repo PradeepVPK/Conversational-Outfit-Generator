@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+
+  img{
+   margin-right: 30px;
+ 
+  }
+  
+#searchProduct{
+  background-color: #fff;
+}
+ #searchProduct::placeholder{
+  color: #959595;
+ }
+nav{
+  margin-bottom: 5px;
+min-height: 70px;
+ 
+}
+/* Styles for wrapping the search box */
+ /* Bootstrap 5 text input with search icon */
+.searchIcon{
+  background-color: #fff;
+  display: flex;
+  width: 100%;
+  border-radius: 10px;
+}
+.btn{
+  border: transparent;
+}
+input[type="search"]{
+  border: #fff;
+ 
+}

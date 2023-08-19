@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ConversationFashionOutfitFrontend</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-primary " data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+      <img src="../assets/flipkart-logo.png" width="70x" height="70x" alt="Flipkart Logo" class="img-fluid">
+    </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+   
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <form class="d-flex" role="search">
+          <div class="searchIcon">
+          <input class="form-control me-2" type="search" id="searchProduct" placeholder="Search for Products" aria-label="Search">
+          <button class="btn " type="submit"><img src="../assets/search.png" width="30px" height="30px" style="margin-right: 0;"></button>
+        </div>
+        </form>
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Pradeep
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">My Profile</a></li>
+              <li><a class="dropdown-item" href="#">Orders</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/home" class="nav-link" id="home-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="cart-link'">Cart</a>
+          </li>
+         
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              More
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Notification Preference</a></li>
+              <li><a class="dropdown-item" href="#">24 x 7 Customer Care</a></li>
+              <li><a class="dropdown-item" href="#">Advertise</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"> 
+            <a href="/chat" class="nav-link"  id="chat-link">        
+           Style Bot   </a>
+        
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <script>
+    // Get the current path
+    var locationPath = window.location.pathname;
+
+    // Get the navigation links
+    var homeLink = document.getElementById('home-link');
+    var chatLink = document.getElementById('chat-link');
+    var cartLink = document.getElementById('cart-link');
+
+    // Add active class based on the current path
+    if (locationPath === '/home') {
+      homeLink.classList.add('active');
+    } else if (locationPath === '/chat') {
+      chatLink.classList.add('active');
+    } else if (locationPath === '/cart') {
+      cartLink.classList.add('active');
+    }
+  </script>
+
+  <div class="container">
+    <app-root></app-root>
+  </div>
+  
+  <footer class="mt-4" style="text-align: center;">
+    <p>&copy; 2023 Flipkart. All rights reserved.</p>
+  </footer>
+
+  
+</body>
+</html>
