@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+:host {
+  --header-color: var(--chat-header-color, linear-gradient(90deg,#3c3cf4,#3c06a0));
+  --bot-color: var(--chat-bot-color,#f0f0f0);
+  --user-color: var(--chat-user-color,linear-gradient(90deg,#3c3cf4,#2f27c9));
+  --bg-color: var(--chat-bg-color, #f9fbf7 );
+  --title-color: var(--chat-title-color, #e9e9e9);
+  --border-radius:var(--chat-border-radius, 20px);
+}
+
+*{
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: bolder;
+  color: #000000af;
+}
+
+/* Reset default margins and paddings */
+body, h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Basic styling for chat container */
+.chat-container {
+  
+  background-color: var(--bg-color);
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius:24px 8px 24px 24px;
+  overflow: hidden;
+  height: 550px; /* Set fixed height */
+  display: flex;
+  flex-direction: column;
+  box-shadow: #333 3px 5px 0.5;
+}
+
+/* Header styling */
+.chat-header {
+  
+  background: var(--header-color);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  border-radius:0 0 32px 0;
+}
+
+.avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: var(--title-color) solid 1px;
+}
+
+.title {
+
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--title-color);
+}
+
+/* Message styling */
+.chat-messages {
+  padding: 10px;
+  overflow-y: scroll;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  max-width: 100%;
+  word-wrap: break-word;
+
+
+}
+
+.user-message {
+  align-self: flex-end;
+  background: var(--user-color);
+  color: var(--bot-color);
+  letter-spacing: 1px;
+  border-radius: var(--border-radius);
+  padding: 0 15px;
+}
+
+.bot-message {
+  align-self: flex-start;
+  background: #f3f2f0;
+  border-radius: var(--border-radius);
+ box-shadow: 0 0 15px rgba(43, 42, 42, 0.2);
+  padding: 0 15px ;
+  letter-spacing: 1px;
+  padding-left:20px ;
+}
+
+.image-message{
+  background-color: transparent;
+}
+/* Input styling */
+.chat-input {
+  border-top : rgba(0, 0 , 0 , 0.2) solid 1px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  bottom: 0;
+  background-color: var(--bg-color);
+  z-index: 2;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid var(--bg-color);
+  border-radius: 4px;
+  background: var(--bg-color);
+}
+
+.chat-input input.form-control:focus {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+
+
+/* Transparent scrollbar */
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+/* CSS styles for user and bot messages */
+/* chat.component.css */
+
+/* Style for bot's response with image */
+.image-response {
+  display: flex;
+  align-items: flex-end; /* Align image to the bottom of the chat bubble */
+
+  max-width: 100%; /* Ensure the image doesn't exceed the width of the chat bubble */
+  height: auto; /* Maintain aspect ratio */
+  
+  background-size: cover;
+
+}
+
+
+
+
+/* Add this to your component's CSS file */
+.btn-toggle {
+  background-color:transparent; /* Initial background color */
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-toggle:active{
+  background: var(--header-color);
+  
+  box-shadow: 0  0  10px rgba(0, 0, 0, 0.7);
+  height: 55px;
+  width: 55px;
+}
+
+.send-button {
+ 
+  color: #fff;
+  border: none;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  cursor: pointer;
+  margin:0 10px;
+}
+
+.send-button:active {
+ margin-right: 1px;
+  height: 55px;
+  width: 55px;
+  filter: drop-shadow(0 0 0.05rem rgb(71, 65, 255));
+
+  
+}
+.send-icon{
+  margin-left: 5px;
+  height: 40px;
+  width: 40px;
+  
+}
+
+
+@media  (max-width: 576px) {
+  .send-icon{
+    margin-left: 5px;
+    height: 30px;
+    width: 30px; 
+  }
+  .send-button:active {
+    height: 30px;
+    width: 30px; 
+    }
+  .send-icon:active {
+   
+    height: 30px;
+    width: 30px; 
+    filter: drop-shadow(0 0 0.05rem rgb(255, 65, 217)); 
+  }
+
+  .btn-toggle {
+    background-color:transparent; /* Initial background color */
+    border: none;
+    border-radius: 50%;
+    width:30px;
+    height:30px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-toggle:active{
+    background: var(--header-color);
+    width:45px;
+    height:45px;
+    box-shadow: 0  0  10px rgba(0, 0, 0, 0.7);
+  
+  }
+
+
+}

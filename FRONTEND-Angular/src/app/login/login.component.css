@@ -1,0 +1,57 @@
+:root {
+  --background-color: var(--login-background-color, #f1f3f7);
+}
+
+.card-body {
+  padding: 0;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-title,
+.card-text {
+  padding-left: 10px;
+  font-size: smaller;
+}
+
+.btn-sm {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.card-body:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  background-color:#fff;
+  border-radius: 7px;
+  transform: scale(1.04);
+
+}
+
+.card-img-top {
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 9/8;
+  padding: 0 ;
+}
+
+
+.card-content{
+padding-top: 20px;
+}
+
+
+.card-body:hover .card-content {
+  height: 220px;
+ /* Adjust the value as needed */
+}
+.card-body:hover .card-img-top{
+  height: 200px;
+}
+
+
+.list-group-item:hover {
+  background-color: rgb(13, 110, 253);
+  color: #fff;
+}

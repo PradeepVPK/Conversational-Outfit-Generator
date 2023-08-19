@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="chat-container">
+        <div class="chat-header">
+          <div class="avatar">
+            <img src="../assets/DisplayPic.webp" width="50px" height="50px" style="background-size: cover;" alt="User Avatar">
+          </div>
+          <div class="title">Style Bot</div>
+        </div>
+        <div class="chat-messages" #messages>
+          <div *ngFor="let message of chatMessages" class="message" [ngClass]="{
+            'user-message': message.isUser,
+            'bot-message': !message.isUser,
+            'image-message': message.isImage
+          }">
+            <ng-container *ngIf="!message.isImage; else imageTemplate">
+              
+              {{ message.text }}
+            </ng-container>
+            <ng-template #imageTemplate>
+              <img *ngIf="message.isImage" [src]="message.text" class="image-response" alt="Image">
+            </ng-template>
+          </div>
+        </div>
+        <div class="chat-input">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Type your message..."
+            [(ngModel)]="newMessage"
+            
+            (keydown.enter)="sendMessage()"
+            
+          />
+          <button class="btn btn-toggle mic-button">
+            <img src="../assets/mic.png" alt="mic">
+          </button>
+          <button class="btn  send-button" (click)="sendMessage()">    
+            <img class="send-icon" src="../assets/send-message.png" alt="mic"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
